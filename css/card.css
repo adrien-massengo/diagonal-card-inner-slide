@@ -1,0 +1,56 @@
+.card {
+    aspect-ratio: 1/1.6;
+    width: 40vmin;
+    transition: transform  200ms linear;
+    border: 0.5vmin solid rgba(0, 0, 255, 1);
+    color: azure;
+    position: relative;
+    overflow: hidden;
+
+}
+.padding {
+    padding: 0.5vmin;
+    display: grid;
+    place-items: center;
+    user-select: none;
+    position: absolute;
+    color: chartreuse;
+    left:0;
+    right:0;
+}
+
+.colour-container {
+    width: 75.5vmin;
+    height: 75.5vmin;
+    top: calc(50% - 37.74vmin);
+    left: calc(50% - 37.74vmin);
+    pointer-events: none;
+    transform-origin: center;
+    transform: rotateZ(45deg);
+    position: absolute;
+    z-index: 0;
+    display: flex;
+
+}
+
+.colour-child {
+    width: 25%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+.colour-child:nth-child(even) {
+    background-color: aliceblue;
+    transform: translateY(100%) ;
+}
+
+.colour-child:nth-child(odd) {
+    background-color: darkslategrey;
+    transform: translateY(-100%);
+}
+
+.card:hover > .colour-container > .colour-child:nth-child(even),
+.card:hover > .colour-container > .colour-child:nth-child(odd) {
+    transform: translateY(0);
+}
+
